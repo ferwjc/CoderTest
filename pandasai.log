@@ -1,0 +1,652 @@
+2024-02-01 17:15:07 [INFO] Question: Return the sum of impactto en USD
+2024-02-01 17:15:07 [INFO] Running PandasAI with openai LLM...
+2024-02-01 17:15:07 [INFO] Prompt ID: 297f961c-1c49-4f40-8ace-086658dce870
+2024-02-01 17:15:07 [INFO] Executing Step 0: CacheLookup
+2024-02-01 17:15:07 [INFO] Executing Step 1: PromptGeneration
+2024-02-01 17:15:07 [INFO] Using prompt: <dataframe>
+dfs[0]:16x6
+ID R#,Descripción del Riesgo,Impacto en USD,Impacto,Probabilidad,Riesgo 
+2.0,Pagos de facturas infe...,"2,300,000",Bajo,Posible,Bajo
+1.0,Pagos de facturas fuer...,"8,500,000",Alto,Muy probable,Critico
+3.0,Deficiencias en los co...,"3,900,000",Medio,Probable,Medio
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: Return the sum of impactto en USD
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-02-01 17:15:07 [INFO] Executing Step 2: CodeGenerator
+2024-02-01 17:15:14 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+sum_impact = dfs[0]['Impacto en USD'].str.replace(',', '').astype(float).sum()
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "number", "value": sum_impact}
+            ```
+            
+2024-02-01 17:15:14 [INFO] Executing Step 3: CachePopulation
+2024-02-01 17:15:14 [INFO] Executing Step 4: CodeExecution
+2024-02-01 17:15:14 [INFO] Saving charts to C:\Users\ferwj\Documents\Coderhouse Prompts\Entregas\Entrega N°3\exports\charts\temp_chart.png
+2024-02-01 17:15:14 [INFO] 
+Code running:
+```
+sum_impact = dfs[0]['Impacto en USD'].str.replace(',', '').astype(float).sum()
+result = {'type': 'number', 'value': sum_impact}
+        ```
+2024-02-01 17:15:14 [INFO] Executing Step 5: ResultValidation
+2024-02-01 17:15:14 [INFO] Answer: {'type': 'number', 'value': 93700000.0}
+2024-02-01 17:15:14 [INFO] Executed in: 7.214595556259155s
+2024-02-01 17:15:14 [INFO] Executing Step 6: ResultParsing
+2024-02-01 17:17:15 [INFO] Question: Wich is the riesgo critico
+2024-02-01 17:17:15 [INFO] Running PandasAI with openai LLM...
+2024-02-01 17:17:15 [INFO] Prompt ID: c05a1335-1060-45a1-a05d-68efac5fa545
+2024-02-01 17:17:15 [INFO] Executing Step 0: CacheLookup
+2024-02-01 17:17:15 [INFO] Executing Step 1: PromptGeneration
+2024-02-01 17:17:15 [INFO] Using prompt: <dataframe>
+dfs[0]:16x6
+ID R#,Descripción del Riesgo,Impacto en USD,Impacto,Probabilidad,Riesgo 
+2.0,Pagos de facturas infe...,"2,300,000",Bajo,Posible,Bajo
+1.0,Pagos de facturas fuer...,"8,500,000",Alto,Muy probable,Critico
+3.0,Deficiencias en los co...,"3,900,000",Medio,Probable,Medio
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: Wich is the riesgo critico
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-02-01 17:17:15 [INFO] Executing Step 2: CodeGenerator
+2024-02-01 17:17:21 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+riesgo_critico = dfs[0][dfs[0]['Riesgo'] == 'Critico']['Descripción del Riesgo'].values[0]
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "string", "value": riesgo_critico}
+            ```
+            
+2024-02-01 17:17:22 [INFO] Executing Step 3: CachePopulation
+2024-02-01 17:17:22 [INFO] Executing Step 4: CodeExecution
+2024-02-01 17:17:22 [INFO] Saving charts to C:\Users\ferwj\Documents\Coderhouse Prompts\Entregas\Entrega N°3\exports\charts\temp_chart.png
+2024-02-01 17:17:22 [INFO] 
+Code running:
+```
+riesgo_critico = dfs[0][dfs[0]['Riesgo'] == 'Critico']['Descripción del Riesgo'].values[0]
+result = {'type': 'string', 'value': riesgo_critico}
+        ```
+2024-02-01 17:17:22 [WARNING] Failed to execute code with a correction framework [retry number: 1]
+2024-02-01 17:17:22 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 165, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5745, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5753, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Riesgo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\pipelines\smart_datalake_chat\code_execution.py", line 53, in execute
+    result = pipeline_context.query_exec_tracker.execute_func(
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\query_exec_tracker.py", line 128, in execute_func
+    result = function(*args, **kwargs)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\frame.py", line 3807, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3804, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Riesgo'
+. Retrying
+2024-02-01 17:17:22 [INFO] Using prompt: <dataframe>
+dfs[0]:16x6
+ID R#,Descripción del Riesgo,Impacto en USD,Impacto,Probabilidad,Riesgo 
+2.0,Pagos de facturas infe...,"2,300,000",Bajo,Posible,Bajo
+1.0,Pagos de facturas fuer...,"8,500,000",Alto,Muy probable,Critico
+3.0,Deficiencias en los co...,"3,900,000",Medio,Probable,Medio
+</dataframe>
+
+The user asked the following question:
+Q: Wich is the riesgo critico
+
+You generated this python code:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+riesgo_critico = dfs[0][dfs[0]['Riesgo'] == 'Critico']['Descripción del Riesgo'].values[0]
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "string", "value": riesgo_critico}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 165, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5745, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5753, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Riesgo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\pipelines\smart_datalake_chat\code_execution.py", line 53, in execute
+    result = pipeline_context.query_exec_tracker.execute_func(
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\query_exec_tracker.py", line 128, in execute_func
+    result = function(*args, **kwargs)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\frame.py", line 3807, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3804, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Riesgo'
+
+
+Fix the python code above and return the new python code:
+2024-02-01 17:17:28 [INFO] Saving charts to C:\Users\ferwj\Documents\Coderhouse Prompts\Entregas\Entrega N°3\exports\charts\temp_chart.png
+2024-02-01 17:17:28 [INFO] 
+Code running:
+```
+riesgo_critico = dfs[0][dfs[0]['Riesgo '] == 'Critico']['Descripción del Riesgo'].values[0]
+result = {'type': 'string', 'value': riesgo_critico}
+result
+        ```
+2024-02-01 17:17:28 [INFO] Executing Step 5: ResultValidation
+2024-02-01 17:17:28 [INFO] Answer: {'type': 'string', 'value': 'Pagos de facturas fuera de plazos contractuales'}
+2024-02-01 17:17:28 [INFO] Executed in: 13.233623504638672s
+2024-02-01 17:17:28 [INFO] Executing Step 6: ResultParsing
+2024-02-01 17:18:30 [INFO] Question: What is the riesgo alto
+2024-02-01 17:18:30 [INFO] Running PandasAI with openai LLM...
+2024-02-01 17:18:30 [INFO] Prompt ID: fffea8da-3a36-41fb-9a51-42f1c6f13ec1
+2024-02-01 17:18:30 [INFO] Executing Step 0: CacheLookup
+2024-02-01 17:18:30 [INFO] Executing Step 1: PromptGeneration
+2024-02-01 17:18:30 [INFO] Using prompt: <dataframe>
+dfs[0]:16x6
+ID R#,Descripción del Riesgo,Impacto en USD,Impacto,Probabilidad,Riesgo 
+2.0,Pagos de facturas infe...,"2,300,000",Bajo,Posible,Bajo
+1.0,Pagos de facturas fuer...,"8,500,000",Alto,Muy probable,Critico
+3.0,Deficiencias en los co...,"3,900,000",Medio,Probable,Medio
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: What is the riesgo alto
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-02-01 17:18:30 [INFO] Executing Step 2: CodeGenerator
+2024-02-01 17:18:37 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+riesgo_alto = dfs[0][dfs[0]['Riesgo'] == 'Alto']['Descripción del Riesgo'].values[0]
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "string", "value": riesgo_alto}
+            ```
+            
+2024-02-01 17:18:37 [INFO] Executing Step 3: CachePopulation
+2024-02-01 17:18:37 [INFO] Executing Step 4: CodeExecution
+2024-02-01 17:18:37 [INFO] Saving charts to C:\Users\ferwj\Documents\Coderhouse Prompts\Entregas\Entrega N°3\exports\charts\temp_chart.png
+2024-02-01 17:18:37 [INFO] 
+Code running:
+```
+riesgo_alto = dfs[0][dfs[0]['Riesgo'] == 'Alto']['Descripción del Riesgo'].values[0]
+result = {'type': 'string', 'value': riesgo_alto}
+        ```
+2024-02-01 17:18:37 [WARNING] Failed to execute code with a correction framework [retry number: 1]
+2024-02-01 17:18:37 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 165, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5745, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5753, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Riesgo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\pipelines\smart_datalake_chat\code_execution.py", line 53, in execute
+    result = pipeline_context.query_exec_tracker.execute_func(
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\query_exec_tracker.py", line 128, in execute_func
+    result = function(*args, **kwargs)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\frame.py", line 3807, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3804, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Riesgo'
+. Retrying
+2024-02-01 17:18:37 [INFO] Using prompt: <dataframe>
+dfs[0]:16x6
+ID R#,Descripción del Riesgo,Impacto en USD,Impacto,Probabilidad,Riesgo 
+2.0,Pagos de facturas infe...,"2,300,000",Bajo,Posible,Bajo
+1.0,Pagos de facturas fuer...,"8,500,000",Alto,Muy probable,Critico
+3.0,Deficiencias en los co...,"3,900,000",Medio,Probable,Medio
+</dataframe>
+
+The user asked the following question:
+Q: What is the riesgo alto
+
+You generated this python code:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+riesgo_alto = dfs[0][dfs[0]['Riesgo'] == 'Alto']['Descripción del Riesgo'].values[0]
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "string", "value": riesgo_alto}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 165, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5745, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5753, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Riesgo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\pipelines\smart_datalake_chat\code_execution.py", line 53, in execute
+    result = pipeline_context.query_exec_tracker.execute_func(
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\query_exec_tracker.py", line 128, in execute_func
+    result = function(*args, **kwargs)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\frame.py", line 3807, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3804, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Riesgo'
+
+
+Fix the python code above and return the new python code:
+2024-02-01 17:18:44 [INFO] Saving charts to C:\Users\ferwj\Documents\Coderhouse Prompts\Entregas\Entrega N°3\exports\charts\temp_chart.png
+2024-02-01 17:18:44 [INFO] 
+Code running:
+```
+riesgo_alto = dfs[0][dfs[0]['Riesgo '] == 'Alto']['Descripción del Riesgo'].values[0]
+result = {'type': 'string', 'value': riesgo_alto}
+result
+        ```
+2024-02-01 17:18:44 [INFO] Executing Step 5: ResultValidation
+2024-02-01 17:18:44 [INFO] Answer: {'type': 'string', 'value': 'Pagos incoorectos de facturas por errores en las operaciones manuales'}
+2024-02-01 17:18:44 [INFO] Executed in: 13.293341398239136s
+2024-02-01 17:18:44 [INFO] Executing Step 6: ResultParsing
+2024-02-01 17:19:02 [INFO] Question: What is the riesgo critico
+2024-02-01 17:19:02 [INFO] Running PandasAI with openai LLM...
+2024-02-01 17:19:02 [INFO] Prompt ID: 97618ad4-c37a-4f5f-8d1b-f7b60b548c84
+2024-02-01 17:19:02 [INFO] Executing Step 0: CacheLookup
+2024-02-01 17:19:02 [INFO] Executing Step 1: PromptGeneration
+2024-02-01 17:19:02 [INFO] Using prompt: <dataframe>
+dfs[0]:16x6
+ID R#,Descripción del Riesgo,Impacto en USD,Impacto,Probabilidad,Riesgo 
+2.0,Pagos de facturas infe...,"2,300,000",Bajo,Posible,Bajo
+1.0,Pagos de facturas fuer...,"8,500,000",Alto,Muy probable,Critico
+3.0,Deficiencias en los co...,"3,900,000",Medio,Probable,Medio
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: What is the riesgo critico
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-02-01 17:19:02 [INFO] Executing Step 2: CodeGenerator
+2024-02-01 17:19:08 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+riesgo_critico = dfs[0][dfs[0]['Riesgo'] == 'Critico']['Descripción del Riesgo'].values[0]
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "string", "value": riesgo_critico}
+            ```
+            
+2024-02-01 17:19:08 [INFO] Executing Step 3: CachePopulation
+2024-02-01 17:19:08 [INFO] Executing Step 4: CodeExecution
+2024-02-01 17:19:08 [INFO] Saving charts to C:\Users\ferwj\Documents\Coderhouse Prompts\Entregas\Entrega N°3\exports\charts\temp_chart.png
+2024-02-01 17:19:08 [INFO] 
+Code running:
+```
+riesgo_critico = dfs[0][dfs[0]['Riesgo'] == 'Critico']['Descripción del Riesgo'].values[0]
+result = {'type': 'string', 'value': riesgo_critico}
+        ```
+2024-02-01 17:19:08 [WARNING] Failed to execute code with a correction framework [retry number: 1]
+2024-02-01 17:19:08 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 165, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5745, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5753, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Riesgo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\pipelines\smart_datalake_chat\code_execution.py", line 53, in execute
+    result = pipeline_context.query_exec_tracker.execute_func(
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\query_exec_tracker.py", line 128, in execute_func
+    result = function(*args, **kwargs)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\frame.py", line 3807, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3804, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Riesgo'
+. Retrying
+2024-02-01 17:19:08 [INFO] Using prompt: <dataframe>
+dfs[0]:16x6
+ID R#,Descripción del Riesgo,Impacto en USD,Impacto,Probabilidad,Riesgo 
+2.0,Pagos de facturas infe...,"2,300,000",Bajo,Posible,Bajo
+1.0,Pagos de facturas fuer...,"8,500,000",Alto,Muy probable,Critico
+3.0,Deficiencias en los co...,"3,900,000",Medio,Probable,Medio
+</dataframe>
+
+The user asked the following question:
+Q: What is the riesgo critico
+
+You generated this python code:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+riesgo_critico = dfs[0][dfs[0]['Riesgo'] == 'Critico']['Descripción del Riesgo'].values[0]
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "string", "value": riesgo_critico}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 165, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5745, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5753, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Riesgo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\pipelines\smart_datalake_chat\code_execution.py", line 53, in execute
+    result = pipeline_context.query_exec_tracker.execute_func(
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\query_exec_tracker.py", line 128, in execute_func
+    result = function(*args, **kwargs)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\frame.py", line 3807, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3804, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Riesgo'
+
+
+Fix the python code above and return the new python code:
+2024-02-01 17:19:15 [INFO] Saving charts to C:\Users\ferwj\Documents\Coderhouse Prompts\Entregas\Entrega N°3\exports\charts\temp_chart.png
+2024-02-01 17:19:15 [INFO] 
+Code running:
+```
+riesgo_critico = dfs[0][dfs[0]['Riesgo '] == 'Critico']['Descripción del Riesgo'].values[0]
+result = {'type': 'string', 'value': riesgo_critico}
+result
+        ```
+2024-02-01 17:19:15 [INFO] Executing Step 5: ResultValidation
+2024-02-01 17:19:15 [INFO] Answer: {'type': 'string', 'value': 'Pagos de facturas fuera de plazos contractuales'}
+2024-02-01 17:19:15 [INFO] Executed in: 12.514302730560303s
+2024-02-01 17:19:15 [INFO] Executing Step 6: ResultParsing
+2024-02-01 17:21:50 [INFO] Question: Return the sum of impacto en USD
+2024-02-01 17:21:50 [INFO] Running PandasAI with openai LLM...
+2024-02-01 17:21:50 [INFO] Prompt ID: 15546fa7-6611-4c08-a23c-4ff593cd4950
+2024-02-01 17:21:51 [INFO] Executing Step 0: CacheLookup
+2024-02-01 17:21:51 [INFO] Executing Step 1: PromptGeneration
+2024-02-01 17:21:51 [INFO] Using prompt: <dataframe>
+dfs[0]:16x6
+ID R#,Descripción del Riesgo,Impacto en USD,Impacto,Probabilidad,Riesgo 
+3.0,Deficiencias en los co...,"3,900,000",Medio,Probable,Medio
+2.0,Pagos de facturas infe...,"2,300,000",Bajo,Posible,Bajo
+1.0,Pagos de facturas fuer...,"8,500,000",Alto,Muy probable,Critico
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: Return the sum of impacto en USD
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-02-01 17:21:51 [INFO] Executing Step 2: CodeGenerator
+2024-02-01 17:21:57 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+sum_impacto = dfs[0]['Impacto en USD'].str.replace(',', '').astype(float).sum()
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "number", "value": sum_impacto}
+            ```
+            
+2024-02-01 17:21:57 [INFO] Executing Step 3: CachePopulation
+2024-02-01 17:21:57 [INFO] Executing Step 4: CodeExecution
+2024-02-01 17:21:57 [INFO] Saving charts to C:\Users\ferwj\Documents\Coderhouse Prompts\Entregas\Entrega N°3\exports\charts\temp_chart.png
+2024-02-01 17:21:57 [INFO] 
+Code running:
+```
+sum_impacto = dfs[0]['Impacto en USD'].str.replace(',', '').astype(float).sum()
+result = {'type': 'number', 'value': sum_impacto}
+        ```
+2024-02-01 17:21:57 [INFO] Executing Step 5: ResultValidation
+2024-02-01 17:21:57 [INFO] Answer: {'type': 'number', 'value': 93700000.0}
+2024-02-01 17:21:57 [INFO] Executed in: 6.7957987785339355s
+2024-02-01 17:21:57 [INFO] Executing Step 6: ResultParsing
+2024-02-01 17:22:27 [INFO] Question: What is the riesgo critico
+2024-02-01 17:22:27 [INFO] Running PandasAI with openai LLM...
+2024-02-01 17:22:27 [INFO] Prompt ID: 14cb9470-718d-4e55-a242-1451dbbd4713
+2024-02-01 17:22:27 [INFO] Executing Step 0: CacheLookup
+2024-02-01 17:22:27 [INFO] Using cached response
+2024-02-01 17:22:27 [INFO] Executing Step 1: PromptGeneration
+2024-02-01 17:22:27 [INFO] Executing Step 2: CodeGenerator
+2024-02-01 17:22:28 [INFO] Executing Step 3: CachePopulation
+2024-02-01 17:22:28 [INFO] Executing Step 4: CodeExecution
+2024-02-01 17:22:28 [INFO] Saving charts to C:\Users\ferwj\Documents\Coderhouse Prompts\Entregas\Entrega N°3\exports\charts\temp_chart.png
+2024-02-01 17:22:28 [INFO] 
+Code running:
+```
+riesgo_critico = dfs[0][dfs[0]['Riesgo'] == 'Critico']['Descripción del Riesgo'].values[0]
+result = {'type': 'string', 'value': riesgo_critico}
+        ```
+2024-02-01 17:22:28 [WARNING] Failed to execute code with a correction framework [retry number: 1]
+2024-02-01 17:22:28 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 165, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5745, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5753, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Riesgo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\pipelines\smart_datalake_chat\code_execution.py", line 53, in execute
+    result = pipeline_context.query_exec_tracker.execute_func(
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\query_exec_tracker.py", line 128, in execute_func
+    result = function(*args, **kwargs)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\frame.py", line 3807, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3804, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Riesgo'
+. Retrying
+2024-02-01 17:22:28 [INFO] Using prompt: <dataframe>
+dfs[0]:16x6
+ID R#,Descripción del Riesgo,Impacto en USD,Impacto,Probabilidad,Riesgo 
+3.0,Deficiencias en los co...,"3,900,000",Medio,Probable,Medio
+2.0,Pagos de facturas infe...,"2,300,000",Bajo,Posible,Bajo
+1.0,Pagos de facturas fuer...,"8,500,000",Alto,Muy probable,Critico
+</dataframe>
+
+The user asked the following question:
+Q: What is the riesgo critico
+
+You generated this python code:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+riesgo_critico = dfs[0][dfs[0]['Riesgo'] == 'Critico']['Descripción del Riesgo'].values[0]
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "string", "value": riesgo_critico}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 165, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5745, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5753, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Riesgo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\pipelines\smart_datalake_chat\code_execution.py", line 53, in execute
+    result = pipeline_context.query_exec_tracker.execute_func(
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\query_exec_tracker.py", line 128, in execute_func
+    result = function(*args, **kwargs)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\frame.py", line 3807, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\ferwj\.conda\envs\coder-test\lib\site-packages\pandas\core\indexes\base.py", line 3804, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Riesgo'
+
+
+Fix the python code above and return the new python code:
+2024-02-01 17:22:34 [INFO] Saving charts to C:\Users\ferwj\Documents\Coderhouse Prompts\Entregas\Entrega N°3\exports\charts\temp_chart.png
+2024-02-01 17:22:34 [INFO] 
+Code running:
+```
+riesgo_critico = dfs[0][dfs[0]['Riesgo '] == 'Critico']['Descripción del Riesgo'].values[0]
+result = {'type': 'string', 'value': riesgo_critico}
+result
+        ```
+2024-02-01 17:22:34 [INFO] Executing Step 5: ResultValidation
+2024-02-01 17:22:34 [INFO] Answer: {'type': 'string', 'value': 'Pagos de facturas fuera de plazos contractuales'}
+2024-02-01 17:22:34 [INFO] Executed in: 6.621250867843628s
+2024-02-01 17:22:34 [INFO] Executing Step 6: ResultParsing
